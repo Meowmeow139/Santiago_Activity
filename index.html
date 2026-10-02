@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f4f8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            width: 500px;
+            padding: 50px 40px;
+
+            text-align: center;
+
+            background-color: #c9f7ee;
+
+            border: 2px solid #4aa894;
+            border-radius: 18px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #116b5d;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #222;
+            font-size: 25px;
+        }
+
+        .course {
+            color: #777;
+            font-size: 17px;
+        }
+
+        button {
+            background-color: #20a995;
+            color: white;
+
+            border: none;
+            padding: 12px 18px;
+            margin: 4px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #168575;
+        }
+
+        #details {
+            margin-top: 30px;
+            color: #333;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="profile-card" id="profileCard">
+
+        <h1>Student Profile</h1>
+
+        <h2 id="studentName">
+            Angel Santiago
+        </h2>
+
+        <p class="course">
+            BS Computer Science - 3rd Year
+        </p>
+
+        <button onclick="changeName()">
+            Change Name
+        </button>
+
+        <button onclick="changeBackground()">
+            Change Background
+        </button>
+
+        <button onclick="hideDetails()" id="hideButton">
+            Hide Details
+        </button>
+
+        <p id="details">
+            Angel is a third-year BS Computer Science
+            student who enjoys programming and web development.
+        </p>
+
+    </div>
+
+
+    <script>
+
+        function changeName() {
+
+            let newName = prompt("Enter the new student name:");
+
+            if (newName !== null && newName.trim() !== "") {
+
+                document.getElementById("studentName").textContent = newName;
+
+            }
+
+        }
+
+
+        function changeBackground() {
+
+            document.getElementById("profileCard").style.backgroundColor = "white";
+
+        }
+
+
+        function hideDetails() {
+
+            let details = document.getElementById("details");
+
+            let button = document.getElementById("hideButton");
+
+            if (details.style.display === "none") {
+
+                details.style.display = "block";
+
+                button.textContent = "Hide Details";
+
+            } else {
+
+                details.style.display = "none";
+
+                button.textContent = "Show Details";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
